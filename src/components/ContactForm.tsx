@@ -104,6 +104,27 @@ export default function ContactForm() {
     bg-no-repeat
   `;
 
+  const dateClasses = `
+    w-full px-4 py-3
+    bg-[#1a1510] 
+    border-2 border-gold-dark/50 
+    rounded-lg 
+    text-cream 
+    placeholder:text-cream/40
+    focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50
+    transition-all duration-300
+    cursor-pointer
+    min-h-[50px]
+    [&::-webkit-calendar-picker-indicator]:opacity-100
+    [&::-webkit-calendar-picker-indicator]:invert
+    [&::-webkit-calendar-picker-indicator]:sepia
+    [&::-webkit-calendar-picker-indicator]:saturate-[5000%]
+    [&::-webkit-calendar-picker-indicator]:hue-rotate-[5deg]
+    [&::-webkit-calendar-picker-indicator]:brightness-[0.9]
+    [&::-webkit-calendar-picker-indicator]:cursor-pointer
+    [&::-webkit-date-and-time-value]:text-left
+  `;
+
   const labelClasses = `
     block text-gold text-sm font-medium mb-2 tracking-wide
   `;
@@ -220,7 +241,7 @@ export default function ContactForm() {
             id="eventDate"
             value={formData.eventDate}
             onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-            className={inputClasses + " cursor-pointer"}
+            className={dateClasses}
           />
         </motion.div>
 
