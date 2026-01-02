@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0d0d;
+  --foreground: #f5f0e6;
+  --gold: #c9a227;
+  --gold-light: #e6c44d;
+  --gold-dark: #8b6914;
+  --burgundy: #722f37;
+  --burgundy-dark: #4a1f24;
+  --cream: #f5f0e6;
+  --parchment: #e8dcc4;
+  --wood-dark: #3d2914;
+  --wood-light: #6b4423;
+  --mystery-purple: #2d1b4e;
+  --mystery-blue: #1a2744;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-gold: #c9a227;
+  --color-gold-light: #e6c44d;
+  --color-gold-dark: #8b6914;
+  --color-burgundy: #722f37;
+  --color-burgundy-dark: #4a1f24;
+  --color-cream: #f5f0e6;
+  --color-parchment: #e8dcc4;
+  --color-wood-dark: #3d2914;
+  --color-wood-light: #6b4423;
+  --color-mystery-purple: #2d1b4e;
+  --color-mystery-blue: #1a2744;
+  --font-sans: var(--font-cinzel);
+  --font-display: var(--font-cinzel-decorative);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--wood-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 0 0 10px rgba(201, 162, 39, 0.5),
+               0 0 20px rgba(201, 162, 39, 0.3),
+               0 0 30px rgba(201, 162, 39, 0.2);
+}
+
+/* Parchment texture background */
+.parchment-bg {
+  background: 
+    linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.03) 50%, transparent 100%),
+    linear-gradient(45deg, #e8dcc4 0%, #f5f0e6 50%, #e8dcc4 100%);
+  position: relative;
+}
+
+.parchment-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Map pattern */
+.map-lines {
+  background-image: 
+    linear-gradient(rgba(139, 105, 20, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 105, 20, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
