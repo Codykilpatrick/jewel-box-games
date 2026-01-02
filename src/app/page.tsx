@@ -8,16 +8,26 @@ import ContactForm from "@/components/ContactForm";
 
 // Floating particles for background ambiance
 const BACKGROUND_PARTICLES = [
-  { left: 5, top: 15, duration: 4.5, delay: 0 },
-  { left: 92, top: 25, duration: 5.2, delay: 1.2 },
-  { left: 18, top: 65, duration: 4.8, delay: 0.8 },
-  { left: 75, top: 10, duration: 5.5, delay: 1.5 },
-  { left: 35, top: 45, duration: 4.2, delay: 0.3 },
-  { left: 88, top: 72, duration: 5.0, delay: 1.8 },
-  { left: 8, top: 85, duration: 4.6, delay: 0.6 },
-  { left: 62, top: 88, duration: 5.3, delay: 1.0 },
-  { left: 48, top: 18, duration: 4.4, delay: 0.4 },
-  { left: 95, top: 55, duration: 5.1, delay: 1.4 },
+  { left: 3, top: 8, duration: 4.5, delay: 0 },
+  { left: 92, top: 12, duration: 5.2, delay: 1.2 },
+  { left: 15, top: 25, duration: 4.8, delay: 0.8 },
+  { left: 78, top: 18, duration: 5.5, delay: 1.5 },
+  { left: 45, top: 32, duration: 4.2, delay: 0.3 },
+  { left: 88, top: 38, duration: 5.0, delay: 1.8 },
+  { left: 8, top: 45, duration: 4.6, delay: 0.6 },
+  { left: 62, top: 52, duration: 5.3, delay: 1.0 },
+  { left: 28, top: 58, duration: 4.4, delay: 0.4 },
+  { left: 95, top: 42, duration: 5.1, delay: 1.4 },
+  { left: 52, top: 65, duration: 4.3, delay: 0.2 },
+  { left: 18, top: 72, duration: 5.4, delay: 1.6 },
+  { left: 82, top: 68, duration: 4.7, delay: 0.9 },
+  { left: 38, top: 78, duration: 5.0, delay: 1.3 },
+  { left: 68, top: 82, duration: 4.9, delay: 0.5 },
+  { left: 5, top: 88, duration: 5.2, delay: 1.7 },
+  { left: 92, top: 75, duration: 4.4, delay: 0.7 },
+  { left: 25, top: 92, duration: 5.6, delay: 1.1 },
+  { left: 75, top: 95, duration: 4.8, delay: 0.1 },
+  { left: 55, top: 15, duration: 5.3, delay: 1.9 },
 ];
 
 function FloatingParticles() {
@@ -291,7 +301,8 @@ export default function Home() {
 
             {/* Testimonial/Quote Section */}
             <section className="relative py-24 px-6 overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(114,47,55,0.2)_0%,_rgba(13,13,13,1)_70%)]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] via-[#1a1015] to-[#0d0d0d]" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(114,47,55,0.15)_0%,_transparent_60%)]" />
               
               <motion.div
                 className="relative z-10 max-w-4xl mx-auto text-center"
@@ -321,7 +332,7 @@ export default function Home() {
 
             {/* Contact Section */}
             <section className="relative py-24 px-6" id="contact">
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] to-[#1a1510]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] via-[#0d0d0d] to-[#151210]" />
               
               <div className="relative z-10 max-w-6xl mx-auto">
                 <motion.div
