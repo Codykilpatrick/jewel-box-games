@@ -6,6 +6,48 @@ import LandingLogo from "@/components/LandingLogo";
 import ServiceCard from "@/components/ServiceCard";
 import ContactForm from "@/components/ContactForm";
 
+// Floating particles for background ambiance
+const BACKGROUND_PARTICLES = [
+  { left: 5, top: 15, duration: 4.5, delay: 0 },
+  { left: 92, top: 25, duration: 5.2, delay: 1.2 },
+  { left: 18, top: 65, duration: 4.8, delay: 0.8 },
+  { left: 75, top: 10, duration: 5.5, delay: 1.5 },
+  { left: 35, top: 45, duration: 4.2, delay: 0.3 },
+  { left: 88, top: 72, duration: 5.0, delay: 1.8 },
+  { left: 8, top: 85, duration: 4.6, delay: 0.6 },
+  { left: 62, top: 88, duration: 5.3, delay: 1.0 },
+  { left: 48, top: 18, duration: 4.4, delay: 0.4 },
+  { left: 95, top: 55, duration: 5.1, delay: 1.4 },
+];
+
+function FloatingParticles() {
+  return (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {BACKGROUND_PARTICLES.map((particle, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 bg-gold/30 rounded-full"
+          style={{
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            opacity: [0.1, 0.4, 0.1],
+            scale: [1, 1.5, 1],
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            delay: particle.delay,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   const [showMainContent, setShowMainContent] = useState(false);
 
@@ -16,12 +58,12 @@ export default function Home() {
   return (
     <>
       {/* Landing Page */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {!showMainContent && (
           <motion.div
             className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0d0d0d] overflow-hidden"
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 0.6 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             {/* Background atmosphere */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(45,27,78,0.3)_0%,_rgba(13,13,13,1)_70%)]" />
@@ -36,11 +78,14 @@ export default function Home() {
       <AnimatePresence>
         {showMainContent && (
           <motion.main
-            className="min-h-screen bg-[#0d0d0d]"
+            className="min-h-screen bg-[#0d0d0d] relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
+            {/* Global floating particles */}
+            <FloatingParticles />
+
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
               {/* Background */}
