@@ -77,22 +77,22 @@ export default function ContactForm() {
   };
 
   const inputClasses = `
-    w-full px-4 py-3 
+    w-full px-4 h-[54px]
     bg-[#1a1510] 
     border-2 border-gold-dark/50 
     rounded-lg 
-    text-cream 
+    text-cream text-base
     placeholder:text-cream/40
     focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50
     transition-all duration-300
   `;
 
   const selectClasses = `
-    w-full px-4 py-3 pr-12
+    w-full px-4 h-[54px] pr-12
     bg-[#1a1510] 
     border-2 border-gold-dark/50 
     rounded-lg 
-    text-cream 
+    text-cream text-base
     placeholder:text-cream/40
     focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50
     transition-all duration-300
@@ -105,16 +105,16 @@ export default function ContactForm() {
   `;
 
   const dateClasses = `
-    w-full px-4 py-3
+    w-full px-4 h-[54px]
     bg-[#1a1510] 
     border-2 border-gold-dark/50 
     rounded-lg 
-    text-cream 
+    text-cream text-base
     placeholder:text-cream/40
     focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50
     transition-all duration-300
     cursor-pointer
-    min-h-[50px]
+    appearance-none
     [&::-webkit-calendar-picker-indicator]:opacity-100
     [&::-webkit-calendar-picker-indicator]:invert
     [&::-webkit-calendar-picker-indicator]:sepia
